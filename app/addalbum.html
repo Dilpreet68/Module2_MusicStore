@@ -1,0 +1,46 @@
+<br><br><br>
+<p class="text-center"><font  color="brown" style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif"><h1>Add Album</h1></font></p>
+<div style="padding-left: 50px; padding-right: 50px;">
+    <div style="background-color: blanchedalmond">
+<div class="border border-danger" ><br>
+
+<br>
+<form #empForm=ngForm (ngSubmit)="addData()">
+        <div class="form-group row">
+                <label for="inputId" class="col-sm-2 col-form-label">&nbsp;&nbsp;Album ID</label>
+                    <div class="col-sm-10" style="padding-left: 50px; padding-right: 50px;">
+                    <input type="text" class="form-control" name="id" id="aid" [(ngModel)]="albumId" #idControl="ngModel" required  >
+                    <span  class="alert alert-danger" role="alert" *ngIf="idControl.touched && idControl.invalid">ID should be filled</span>    
+                </div>
+                    </div>
+                    <div class="form-group row">
+                            <label for="inputName" class="col-sm-2 col-form-label">&nbsp;&nbsp;Title</label>
+                                <div class="col-sm-10" style="padding-left: 50px; padding-right: 50px;">
+                                <input type="text" class="form-control" [(ngModel)]="albumTitle" id="title" name="atitle" #titleControl="ngModel" required>
+                                <span  class="alert alert-danger" role="alert" *ngIf="titleControl.touched && titleControl.invalid">Name should be filled</span>    
+                            </div>
+                    </div>
+                    <div class="form-group row">
+                            <label for="inputCost" class="col-sm-2 col-form-label">&nbsp;&nbsp;Artist</label>
+                                <div class="col-sm-10" style="padding-left: 50px; padding-right: 50px;">
+                                <input type="text" class="form-control" [(ngModel)]="albumArtist" id="artist" name="aartist" #artistControl="ngModel" required>
+                                <span  class="alert alert-danger" role="alert" *ngIf="artistControl.touched && artistControl.invalid">Salary should be filled</span>
+                            </div>
+                    </div>
+                    <div class="form-group row">
+                            <label for="inputCost" class="col-sm-2 col-form-label">&nbsp;&nbsp;Price</label>
+                                <div class="col-sm-10" style="padding-left: 50px; padding-right: 50px;">
+                                <input type="text" class="form-control" [(ngModel)]="albumPrice" id="price" name="aprice" #priceControl="ngModel" required>
+                                <span  class="alert alert-danger" role="alert" *ngIf="priceControl.touched && priceControl.invalid">Department should be filled</span>
+                            </div>
+                    </div>
+                    <br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="reset" class="btn btn-success" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RESET&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;">       
+                 &nbsp;
+                  &nbsp;
+
+        <input type ="submit" value="&nbsp;&nbsp;&nbsp;&nbsp;SAVE ALBUM&nbsp;&nbsp;&nbsp;&nbsp;" class="btn btn-primary" [disabled]="empForm.invalid" />
+    
+</form>
+</div></div></div>
